@@ -4,32 +4,31 @@
  * заданных массивом минимум из 4 положительных целых чисел.
  */
 
-function getSum($chisla) {
+function getSum($nums) {
 
     $min = [
         'index' => 0,
-        'chislo' => $chisla[0]
+        'num' => $nums[0]
     ];
 
     $min2 = [
         'index' => 1,
-        'chislo' => $chisla[1]
+        'num' => $nums[1]
     ];
 
-    foreach ($chisla as $index => $chislo) {
+    foreach ($nums as $index => $num) {
 
-        if ($min['chislo'] > $chislo && $index != $min2['index']) {
+        if ($min['num'] > $num && $index != $min2['index']) {
             $min['index'] = $index;
-            $min['chislo'] = $chislo;
-        } elseif ($min2['chislo'] > $chislo && $index != $min['index']) {
+            $min['num'] = $num;
+        } elseif ($min2['num'] > $num && $index != $min['index']) {
             $min2['index'] = $index;
-            $min2['chislo'] = $chislo;
+            $min2['num'] = $num;
         }
     }
 
-   return $min['chislo'] + $min2['chislo'];
-
+   return $min['num'] + $min2['num'];
 }
 
-$chisla = [3, 1, 67, 2, 7];
-echo getSum ($chisla) . PHP_EOL;
+$test = [3, 1, 67, 2, 7];
+echo getSum ($test) . PHP_EOL; // 1 + 2 = 3

@@ -11,7 +11,8 @@
  * XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
  * XO("zzoo") => false
  */
-function xo(string $symbols){
+function xo(string $symbols): bool
+{
     $symbols = mb_strtolower($symbols);
     $o = substr_count($symbols, 'o');
     $x = substr_count($symbols, 'x');

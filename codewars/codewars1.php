@@ -6,14 +6,17 @@
  * Например, для [1, 2, 2] он должен вернуть 9, потому что 1 ^ 2 + 2 ^ 2 + 2 ^ 2 = 9.
  */
 
-function square_sum($numbers) : int {
+function square_sum($numbers) : int
+{
     $sum = 0;
+
     foreach ($numbers as $num){
-        $kvadrat = $num * $num;
-        $sum = $sum + $kvadrat;
+        $sum += $num * $num;
     }
+
     return $sum;
 }
 
+// test
 $numbers = [1, 3, 6, 7];
-echo square_sum($numbers);
+echo square_sum($numbers) . PHP_EOL;

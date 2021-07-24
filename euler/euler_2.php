@@ -10,6 +10,7 @@
 $znachenie1 = 1;
 $znachenie2 = 1;
 $sum = 0;
+
 while ($znachenie2 < 4000000) {
 
     $znachenie1 = $znachenie1 + $znachenie2;
@@ -25,6 +26,5 @@ while ($znachenie2 < 4000000) {
         $sum = $sum + $znachenie1;
     }
  //       echo $znachenie2 . PHP_EOL;
-
 }
 echo $sum . PHP_EOL;

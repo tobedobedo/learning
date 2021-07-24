@@ -1,18 +1,15 @@
 <?php
 /**
- * Возвращает количество (количество) гласных в заданной строке.
- * Мы будем считать a, e, i, o, u это ката гласными (но не y).
+ * Возвращает количество гласных в заданной строке.
+ * Гласными считаются a, e, i, o, u.
  * Входная строка будет состоять только из строчных букв и / или пробелов.
  */
 
-function glasnie($str): int
+function sumVowels($str): int
 {
     //  $glasnie = ['a', 'e', 'i', 'o', 'u'];
     $sum = 0;
     for($index = 0 ; $index < strlen($str) ; $index++) {
-//        if (in_array($str[$index], $glasnie)) {
-//            $sum++;
-//        }
         if
         (
             ($str[$index] == 'a') or
@@ -27,5 +24,3 @@ function glasnie($str): int
 
     return $sum;
 }
-
-echo glasnie('kotik') . PHP_EOL;

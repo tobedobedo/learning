@@ -4,21 +4,28 @@
  * Какое самое маленькое число делится нацело на все числа от 1 до 20?
  */
 
-function check(int $chislo){
+/**
+ * проверяет делится ли $num без остатка
+ * на числа от 1 до 20
+ *
+ * @param int $num
+ * @return bool
+ */
+function check(int $num): bool
+{
     for ($i = 20; $i > 1; $i--) {
-        if ($chislo % $i != 0) {
+        if ($num % $i != 0) {
             return false;
         }
     }
+
     return true;
 }
 
-$minchislo = 0;
-for ($num = 2520; $minchislo == 0; $num++) {
+for ($num = 2520, $minNum = null; $minNum == null; $num += 2) {
     if (check($num)) {
-        $minchislo = $num;
-
+        $minNum = $num;
     }
 }
 
-echo $minchislo . PHP_EOL;
+echo $minNum . PHP_EOL;
